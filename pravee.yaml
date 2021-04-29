@@ -1,0 +1,68 @@
+format_version: 10
+pipelines:
+  pipeline6-script:
+    group: defaultGroup
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-e6485e5:
+        git: https://github.com/praveen6370/go-cd.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+    stages:
+    - stage6-script2:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          job6-script2:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - --version
+                command: docker
+                run_if: passed
+            - exec:
+                arguments:
+                - -version
+                command: terraform
+                run_if: passed
+            - exec:
+                arguments:
+                - sts
+                - get-caller-identity
+                command: aws
+                run_if: passed
+            - exec:
+                arguments:
+                - clone
+                - git@gitlab.z5x.tech:z5x-tech/zeezest/zeezest-web.git
+                command: git
+                run_if: passed
+            - exec:
+                arguments:
+                - -la
+                command: ls
+                run_if: passed
+            - exec:
+                command: pwd
+                run_if: passed
+            - exec:
+                arguments:
+                - -h
+                command: free
+                run_if: passed
+            - exec:
+                arguments:
+                - -a
+                command: uname
+                run_if: passed
+            - exec:
+                command: hostnamectl
+                run_if: passed

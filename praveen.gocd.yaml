@@ -43,3 +43,24 @@ pipelines:
                 - ls
                 command: aws
                 run_if: passed
+    - stage2-yaml:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          job2-yaml:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - /var/go/.aws/
+                command: cd
+                run_if: passed
+            - exec:
+                arguments:
+                - config
+                command: rm
+                run_if: passed

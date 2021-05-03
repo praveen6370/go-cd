@@ -1,18 +1,18 @@
 format_version: 10
 pipelines:
-  pipeline6-script:
+  pipeline-yaml:
     group: defaultGroup
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
     materials:
-      git-e6485e5:
+      git-b3c1816:
         git: https://github.com/praveen6370/go-cd.git
         shallow_clone: false
         auto_update: true
-        branch: main
+        branch: yaml
     stages:
-    - stage6-script2:
+    - stage-yaml:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
@@ -20,37 +20,26 @@ pipelines:
           type: success
           allow_only_on_success: false
         jobs:
-          job6-script2:
+          job-yaml:
             timeout: 0
+            environment_variables:
+              a: s
+              s: sd
+            secure_variables:
+              AWS_SECRET_ACCESS_KEY: AES:yw48IPDJj9KJfBn6CA8o0w==:c3TuE9D5rHC0lk9k2pfRIA0tCmU0UE28YcWOV62Vjxz9GW2sHgh6lTtBpduOj6nc
+              AWS_ACCESS_KEY_ID: AES:hLKz3ktT9bBxjmu75vnJrw==:TAvlx/O+ELcTDbV6ECp3l5BjeSKhiRWvE2/i34gdRvI=
             tasks:
             - exec:
                 arguments:
-                - --version
-                command: docker
+                - configure
+                - set
+                - secret_key=$AWS_SECRET_ACCESS_KEY
+                - access_key=$AWS_ACCESS_KEY_ID
+                command: aws
                 run_if: passed
             - exec:
                 arguments:
-                - -version
-                command: terraform
-                run_if: passed
-            - exec:
-                arguments:
-                - -la
-                command: ls
-                run_if: passed
-            - exec:
-                command: pwd
-                run_if: passed
-            - exec:
-                arguments:
-                - -h
-                command: free
-                run_if: passed
-            - exec:
-                arguments:
-                - -a
-                command: uname
-                run_if: passed
-            - exec:
-                command: hostnamectl
+                - s3
+                - ls
+                command: aws
                 run_if: passed

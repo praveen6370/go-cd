@@ -54,16 +54,16 @@ pipelines:
           job2-yaml:
             timeout: 0
             tasks:
-#            - exec:
-#                arguments:
-#                - /var/go/.aws/
-#                command: cd
-#                run_if: passed
-#            - exec:
-#                arguments:
-#                - config
-#                command: rm
-#                run_if: passed
+            - exec:
+                arguments:
+                - /var/go/.aws
+                command: cd
+                run_if: passed
+            - exec:
+                arguments:
+                - config
+                command: rm
+                run_if: passed
             - exec:
                 command: pwd
                 run_if: passed

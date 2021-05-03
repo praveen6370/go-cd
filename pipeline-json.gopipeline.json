@@ -55,8 +55,9 @@
               "timeout": -1.0,
               "arguments": [
                 "configure",
-                "--backend-config\u003daccess_key\u003d$AWS_ACCESS_KEY_ID",
-                "--backend-config\u003dsecret_key\u003d$AWS_SECRET_ACCESS_KEY"
+                "set",
+                "secret_key\u003d$AWS_SECRET_ACCESS_KEY",
+                "access_key\u003d$AWS_ACCESS_KEY_ID"
               ],
               "run_if": "passed",
               "type": "exec"

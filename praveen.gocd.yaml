@@ -26,8 +26,8 @@ pipelines:
               a: s
               s: sd
             secure_variables:
-              AWS_SECRET_ACCESS_KEY: AES:yw48IPDJj9KJfBn6CA8o0w==:c3TuE9D5rHC0lk9k2pfRIA0tCmU0UE28YcWOV62Vjxz9GW2sHgh6lTtBpduOj6nc
-              AWS_ACCESS_KEY_ID: AES:hLKz3ktT9bBxjmu75vnJrw==:TAvlx/O+ELcTDbV6ECp3l5BjeSKhiRWvE2/i34gdRvI=
+              AWS_SECRET_ACCESS_KEY:
+              AWS_ACCESS_KEY_ID:
             tasks:
             - exec:
                 arguments:

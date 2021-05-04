@@ -38,11 +38,11 @@
           "environment_variables": [
             {
               "name": "AWS_ACCESS_KEY_ID",
-              "encrypted_value": "AES:KthqdD8INKl+4QKFegor8Q\u003d\u003d:u/J16/DXbGRuiM2f/lf1hv7oIFtnQRSw/WHqC+1jAGo\u003d"
+              "encrypted_value": ""
             },
             {
               "name": "AWS_SECRET_ACCESS_KEY",
-              "encrypted_value": "AES:gvl4ifAWh2JJ+5dzptErWA\u003d\u003d:ZAE22QoBOhxLR3Hf/sICLo59chrx8/yOxD08jdEK0PD2irrGi1MlAckodVp3KjKM"
+              "encrypted_value": ""
             }
           ],
           "tabs": [],
